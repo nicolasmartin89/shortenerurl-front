@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import { motion } from "framer-motion";
-
+import { useStoreContext } from "../contextApi/ContextApi";
 import Card from "./Card";
 
 let desc =
@@ -9,6 +9,8 @@ let desc =
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const { token } = useStoreContext();
+  console.log("TOKEN FROM LANDING PAGE " + token);
 
   const dashBoardNavigateHandler = () => {};
   return (
