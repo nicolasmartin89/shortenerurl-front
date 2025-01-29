@@ -9,7 +9,7 @@ import { useStoreContext } from "../contextApi/ContextApi";
 const LoginPage = () => {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(false);
-  const { setToken } = useStoreContext;
+  const { setToken } = useStoreContext();
 
   const {
     register,
@@ -40,7 +40,7 @@ const LoginPage = () => {
       toast.success("Iniciaste sesión Exitosamente!");
 
       reset();
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
       toast.error("Login Failed!");
